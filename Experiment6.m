@@ -1,0 +1,28 @@
+%Generate sinusoidal wave with different frequency using MATLAB.
+clc;  
+clear;  
+close all; 
+fs = 1000;             
+t = 0:1/fs:1; 
+f1 = 5;                
+f2 = 10;              
+f3 = 20;               
+y1 = sin(2*pi*f1*t);   
+y2 = sin(2*pi*f2*t);   
+y3 = sin(2*pi*f3*t);   
+figure; 
+subplot(3,1,1); 
+plot(t, y1, 'b'); 
+title('Sinusoidal Wave with Frequency 5 Hz'); 
+xlabel('Time (s)'); 
+ylabel('Amplitude'); 
+subplot(3,1,2); 
+plot(t, y2, 'r'); 
+title('Sinusoidal Wave with Frequency 10 Hz'); 
+xlabel('Time (s)'); 
+ylabel('Amplitude'); 
+subplot(3,1,3); 
+plot(t, y3, 'g'); 
+title('Sinusoidal Wave with Frequency 20 Hz'); 
+xlabel('Time (s)'); 
+ylabel('Amplitude');
