@@ -3,8 +3,8 @@
 clc 
 clear all 
 close all 
-Fa=input('Enter a frequency Fa : '); 
-Fs=input('Enter a frequency Fs : '); 
+Fa=10; 
+Fs=640; 
 T=1/Fa; 
 t=0:T/99:T; 
 y=5*sin(2*pi*Fa*t) +2*sin(2*pi*2*Fa*t)+2*sin(2*pi*3*Fa*t); 
@@ -32,7 +32,7 @@ f=Fs*(-N/2:(N/2)-1)/N;
 stem(f,abs(b)); 
 axis([ -30 30 0 160]); 
 %IDFT of a sequence 
-Xk=input('Enter X(K)='); 
+Xk=3-3j; 
 [N,M]=size(Xk); 
 if M~=1; 
 Xk=Xk.'; 
