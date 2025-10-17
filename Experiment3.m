@@ -1,17 +1,38 @@
-%Determine and Plot the Discrete-Time Sequence: 
-%X(n)=2?(n+2)-?(n?4)  where ?7?n?7
+clc;
+clear;
+close all;
 
+% Define n range
 n = -7:7;
 
-% Define unit impulse function
-delta = @(n0, n_vec) double(n_vec == n0);
+% Initialize each sequence as zeros
+x1 = zeros(size(n)); % 2*delta(n+2)
+x2 = zeros(size(n)); % -delta(n-4)
 
-% Construct x[n] = 2*delta(n + 2) - delta(n - 4)
-x = 2 * delta(-2, n) - delta(4, n);
+% Define the impulses
+x1(n == -2) = 2;  % 2*delta(n+2)
+x2(n == 4)  = -1; % -delta(n-4)
 
-% Plot
-stem(n, x, 'filled');
-title('x[n] = 2\delta(n+2) - \delta(n-4)');
-xlabel('n');
-ylabel('x[n]');
+% Combined sequence
+x = x1 + x2;
+
+% Plot each separately
+figure;
+
+subplot(3,1,1);
+stem(n, x1, 'filled', 'b');
+title('2\delta(n+2)');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+subplot(3,1,2);
+stem(n, x2, 'filled', 'r');
+title('-\delta(n-4)');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+subplot(3,1,3);
+stem(n, x, 'filled', 'g');
+title('Combined Sequence X(n) = 2\delta(n+2) - \delta(n-4)');
+xlabel('n'); ylabel('Amplitude');
 grid on;
