@@ -1,5 +1,5 @@
 %Determine and Plot the Discrete-Time Sequence: 
-%X(n)=2?(n+2)??(n?4)  where ?7?n?7
+%X(n)=2?(n+2)-?(n?4)  where ?7?n?7
 
 n = -7:7;
 
